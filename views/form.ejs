@@ -1,27 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#dff6ff,#f5fbff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+form{
+    width:420px;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+form::before{
+    content:"🏥 Add Patient";
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+input{
+    padding:14px;
+    border:1px solid #d0dce7;
+    border-radius:10px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0096c7;
+    box-shadow:0 0 10px rgba(0,150,199,.2);
+}
+
+button{
+    background:#0096c7;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0077b6;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <form action="/createdata" method="POST">
-    
-    <input type="text" name="name" placeholder="Enter Name">
-    
-    <input type="number" name="age" placeholder="Enter Age">
-    
-    <input type="disease" name="disease" placeholder="disease">
+<form action="/createdata" method="POST">
 
-    <input type="doctorname" name="doctorname" placeholder="doctorname">
+<input type="text" name="name" placeholder="Enter Name">
 
-    <input type="fees" name="fees" placeholder="fees">
-    
-    <button type="submit">Add Patient</button>
+<input type="number" name="age" placeholder="Enter Age">
+
+<input type="text" name="disease" placeholder="Disease">
+
+<input type="text" name="doctorname" placeholder="Doctor Name">
+
+<input type="number" name="fees" placeholder="Fees">
+
+<button type="submit">
+Add Patient
+</button>
 
 </form>
-    
+
 </body>
 </html>
+

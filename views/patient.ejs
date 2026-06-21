@@ -1,34 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            border:2px solid black;
-            background-color: antiquewhite;
-            margin:5px
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Data</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e8f7ff,#ffffff);
+    padding:40px;
+}
+
+.heading{
+    text-align:center;
+    color:#0077b6;
+    margin-bottom:30px;
+}
+
+.back{
+    display:inline-block;
+    text-decoration:none;
+    background:#0096c7;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    margin-bottom:25px;
+}
+
+.back:hover{
+    background:#0077b6;
+}
+
+.container{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+}
+
+.card{
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    color:#0077b6;
+    margin-bottom:12px;
+}
+
+.info{
+    font-size:18px;
+    margin:10px 0;
+    color:#444;
+}
+
+.action{
+    margin-top:20px;
+}
+
+.btn{
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    color:white;
+
+    margin-right:10px;
+}
+
+.edit{
+    background:#2a9d8f;
+}
+
+.delete{
+    background:#e63946;
+}
+
+.edit:hover{
+    background:#21867a;
+}
+
+.delete:hover{
+    background:#c1121f;
+}
+
+</style>
+
 </head>
+
 <body>
-    <h1>patient data profile</h1>
-    <a href="/">back to home</a>
-   <div class="container">
-   <% allpatient.forEach((element)=>{ %>
-      <h1> <%= element.name  %> </h1>
-      <h1> <%= element.age  %> </h1>
-      <h1> <%= element.disease %> </h1>
-      <h1> <%= element.doctorname %> </h1>
-      <h1> <%= element.fees %> </h1>
 
-      <a href="/edit/<%=element._id %>"> id se edit</a>
-      <a href="/delete/<%=element._id %>"> id se delete</a>
+<h1 class="heading">
+🏥 Patient Data Profile
+</h1>
 
-<hr>
-   <% }) %>
+<a class="back" href="/">
+← Back To Home
+</a>
 
-   </div>
-   </body>
+<div class="container">
+
+<% allpatient.forEach((element)=>{ %>
+
+<div class="card">
+
+<h2>
+<%= element.name %>
+</h2>
+
+<p class="info">
+👤 Age: <%= element.age %>
+</p>
+
+<p class="info">
+🩺 Disease: <%= element.disease %>
+</p>
+
+<p class="info">
+👨‍⚕️ Doctor: <%= element.doctorname %>
+</p>
+
+<p class="info">
+💰 Fees: ₹<%= element.fees %>
+</p>
+
+<div class="action">
+
+<a
+class="btn edit"
+href="/edit/<%= element._id %>">
+Edit
+</a>
+
+<a
+class="btn delete"
+href="/delete/<%= element._id %>">
+Delete
+</a>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</body>
 </html>
+

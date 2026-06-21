@@ -1,18 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Management</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#dff6ff,#ffffff);
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:50px;
+    width:500px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#0077b6;
+    margin-bottom:35px;
+    font-size:34px;
+}
+
+.btn{
+    display:block;
+
+    text-decoration:none;
+
+    background:#0096c7;
+
+    color:white;
+
+    padding:15px;
+
+    margin:15px 0;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0077b6;
+
+    transform:translateY(-3px);
+}
+
+</style>
+
 </head>
+
 <body>
-    <h1>Lorem ipsum dolor sit.</h1>
 
+<div class="container">
 
+<h1>🏥 Hospital Management</h1>
 
-    <a href="http://localhost:3000/viewdata">ALL patient data</a>
-    <br><br>
-    <a href="http://localhost:3000/insertdata">add patient  data</a>
+<a class="btn" href="http://localhost:3000/viewdata">
+View All Patient Data
+</a>
+
+<a class="btn" href="http://localhost:3000/insertdata">
+Add Patient Data
+</a>
+
+</div>
 
 </body>
 </html>
+
